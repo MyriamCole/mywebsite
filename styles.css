@@ -54,3 +54,29 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+/* Mobile styles */
+@media screen and (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+}
