@@ -71,17 +71,17 @@ footer {
     }
 
     nav ul {
-        display: flex;
-        justify-content: center; /* Center-align the list items */
-        flex-wrap: wrap; /* Allow wrapping of list items */
+        display: block;
+        text-align: center; /* Center-align the list items */
     }
 
     nav ul li {
-        margin: 10px; /* Add margin around each list item */
+        display: inline;
+        margin-right: 10px; /* Adjust spacing between list items */
     }
 
     nav ul li:last-child {
-        margin-right: 0; /* Remove right margin from the last list item */
+        margin-right: 0; /* Remove margin from the last list item */
     }
 
     main {
