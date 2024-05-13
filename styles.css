@@ -66,14 +66,18 @@ footer {
     }
 
     nav ul {
-        display: block;
-        text-align: center;
+        display: flex; /* Make navigation links horizontal */
+        justify-content: space-around; /* Distribute space evenly */
         margin-top: 10px;
     }
 
     nav ul li {
-        display: block;
-        margin-bottom: 10px;
+        display: inline; /* Ensure navigation links are inline */
+        margin: 0; /* Remove margin */
+    }
+
+    nav ul li a {
+        margin: 0; /* Remove margin */
     }
 
     main {
