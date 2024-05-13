@@ -1,6 +1,6 @@
 {
   "name": "My Portfolio",
-  "short_name": "MDG",
+  "short_name": "MCG",
   "description": "Description of your web app",
   "start_url": "./index.html",
   "display": "standalone",
@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "images/main logo 2.png",
+      "src": "images/myriams logo two.png",
       "sizes": "512x512",
       "type": "image/png"
     }
