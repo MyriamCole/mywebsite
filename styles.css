@@ -26,16 +26,11 @@ header h1 {
 
 nav ul {
     list-style-type: none;
-    text-align: center; /* Center-align the list items */
 }
 
 nav ul li {
-    display: inline-block; /* Display list items horizontally */
+    display: inline;
     margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0; /* Remove margin from the last list item */
 }
 
 nav ul li a {
@@ -70,13 +65,19 @@ footer {
         padding: 10px;
     }
 
-    nav ul li {
-        display: block; /* Display list items vertically */
-        margin: 10px 0; /* Add vertical margin between list items */
+    nav ul {
+        display: flex; /* Make navigation links horizontal */
+        justify-content: space-around; /* Distribute space evenly */
+        margin-top: 10px;
     }
 
-    nav ul li:last-child {
-        margin-bottom: 0; /* Remove bottom margin from the last list item */
+    nav ul li {
+        display: inline; /* Ensure navigation links are inline */
+        margin: 0; /* Remove margin */
+    }
+
+    nav ul li a {
+        margin: 0; /* Remove margin */
     }
 
     main {
