@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f5f5f5;
+    font-size: 16px; /* Increase font size for better readability */
 }
 
 header {
@@ -20,6 +21,7 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 24px; /* Increase header font size for emphasis */
 }
 
 nav ul {
@@ -34,6 +36,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px; /* Increase font size for better readability */
 }
 
 main {
@@ -46,6 +49,7 @@ section {
 
 h2 {
     color: #333;
+    font-size: 20px; /* Increase font size for better readability */
 }
 
 footer {
@@ -78,5 +82,17 @@ footer {
 
     section {
         margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust header font size for mobile */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Adjust navigation font size for mobile */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust section header font size for mobile */
     }
 }
