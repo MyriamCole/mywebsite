@@ -70,13 +70,18 @@ footer {
         padding: 10px;
     }
 
+    nav ul {
+        display: flex;
+        justify-content: center; /* Center-align the list items */
+        flex-wrap: wrap; /* Allow wrapping of list items */
+    }
+
     nav ul li {
-        display: block; /* Display list items vertically */
-        margin: 10px 0; /* Add vertical margin between list items */
+        margin: 10px; /* Add margin around each list item */
     }
 
     nav ul li:last-child {
-        margin-bottom: 0; /* Remove bottom margin from the last list item */
+        margin-right: 0; /* Remove right margin from the last list item */
     }
 
     main {
