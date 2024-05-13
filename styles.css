@@ -27,10 +27,12 @@ header h1 {
 nav ul {
     list-style-type: none;
     text-align: center; /* Center-align the list items */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Horizontally center the items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
 }
 
 nav ul li {
-    display: inline-block; /* Display list items horizontally */
     margin-right: 20px;
 }
 
@@ -68,11 +70,6 @@ footer {
 @media screen and (max-width: 600px) {
     header {
         padding: 10px;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: center;
     }
 
     nav ul li {
