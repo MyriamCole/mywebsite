@@ -27,10 +27,11 @@ header h1 {
 nav ul {
     list-style-type: none;
     text-align: center; /* Center-align the list items */
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline-block; /* Display list items horizontally */
     margin-right: 20px;
 }
 
@@ -71,17 +72,16 @@ footer {
     }
 
     nav ul {
-        display: block;
-        text-align: center; /* Center-align the list items */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul li {
-        display: inline;
-        margin-right: 10px; /* Adjust spacing between list items */
+        margin: 10px 0; /* Add vertical margin between list items */
     }
 
     nav ul li:last-child {
-        margin-right: 0; /* Remove margin from the last list item */
+        margin-bottom: 0; /* Remove bottom margin from the last list item */
     }
 
     main {
