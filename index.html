@@ -4,14 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Institutional and Home Care Assistance by Myriam Colella</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert library -->
-    <link rel="icon" type="image/png" href="images/myriams logo two.png"> <!-- Logo for browser tab -->
-    <!-- For iOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="images/myriams logo two.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
-    <!-- For Android -->
-    <link rel="manifest" href="manifest.json"> <!-- Manifest file for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        #home-button img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        #home-button img:hover {
+            transform: scale(1.05);
+        }
+        
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            text-align: center;
+            flex: 1;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+        
+        /* Main content styles */
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        #introduction {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        #introduction h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+        
+        #introduction p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #3498db;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            #home-button {
+                margin-bottom: 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.3rem;
+                margin: 0.5rem 0 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            #introduction {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -33,7 +197,7 @@
     <main>
         <section id="introduction">
             <h2>Welcome to my page</h2>
-            <p>Hello, I'm Myriam Colella, With a background in nursing and a passion for providing compassionate care, I established this organization to make a meaningful difference in the lives of individuals and families in need.</p>
+            <p>Hello, I'm Myriam Colella. With a background in nursing and a passion for providing compassionate care, I established this organization to make a meaningful difference in the lives of individuals and families in need.</p>
             <p>At Institutional and Home Care Assistance, I understand the importance of personalized care and support. I am committed to providing the highest quality of service, tailored to meet the unique needs of each individual I serve.</p>
             <p>Thank you for considering me for your care needs. I look forward to the opportunity to assist you or your loved ones.</p>
         </section>
@@ -45,9 +209,26 @@
             <a href="https://www.facebook.com/dan.gaudreault/" class="social-icon" onclick="showMessage('Facebook')"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/dgmovement87/" class="social-icon" onclick="showMessage('Instagram')"><i class="fab fa-instagram"></i></a>
             <a href="https://m.me/myriam.colella" class="social-icon" onclick="showMessage('Messenger')"><i class="fab fa-facebook-messenger"></i></a>
-            <!-- Add more social icons as needed -->
         </div>
     </footer>
+
+    <script>
+        function showMessage(platform) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Redirecting',
+                text: `You are being redirected to ${platform}.`,
+                icon: 'info',
+                confirmButtonText: 'Continue',
+                showCancelButton: true,
+                cancelButtonText: 'Stay Here'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = event.currentTarget.href;
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
