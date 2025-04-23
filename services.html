@@ -5,13 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Institutional and Home Care Assistance</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert library -->
-    <link rel="icon" type="image/png" href="images/myriams logo two.png"> <!-- Logo for browser tab -->
-    <!-- For iOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="images/myriams logo two.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
-    <!-- For Android -->
-    <link rel="manifest" href="manifest.json"> <!-- Manifest file for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Services page specific styles */
+        #services {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        #services ul {
+            list-style-type: none;
+            margin-top: 1.5rem;
+        }
+        
+        #services li {
+            background-color: #f8f9fa;
+            margin-bottom: 0.8rem;
+            padding: 1rem;
+            border-left: 4px solid #3498db;
+            border-radius: 0 4px 4px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #services li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        @media screen and (max-width: 600px) {
+            #services li {
+                padding: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -32,15 +62,18 @@
 
     <main>
         <section id="services">
-            <h2>Services</h2>
-            <p>Our services include:</p>
+            <h2>Our Care Services</h2>
+            <p>We provide compassionate, professional care services tailored to meet your unique needs:</p>
             <ul>
-                <li>Personal care assistance</li>
-                <li>Medication reminders</li>
-                <li>Meal preparation</li>
-                <li>Light housekeeping</li>
-                <li>Companionship</li>
+                <li><strong>Personal care assistance</strong> - Help with bathing, dressing, grooming, and mobility</li>
+                <li><strong>Medication management</strong> - Reminders and assistance with medications</li>
+                <li><strong>Meal preparation</strong> - Nutritious meals customized to dietary needs</li>
+                <li><strong>Light housekeeping</strong> - Laundry, dishes, and light cleaning</li>
+                <li><strong>Companionship</strong> - Meaningful conversation and activities</li>
+                <li><strong>Respite care</strong> - Temporary relief for family caregivers</li>
+                <li><strong>Specialized care</strong> - Support for dementia, Alzheimer's, and other conditions</li>
             </ul>
+            <p>All services are provided with dignity, respect, and attention to your personal preferences.</p>
         </section>
     </main>
 
@@ -50,9 +83,26 @@
             <a href="https://www.facebook.com/dan.gaudreault/" class="social-icon" onclick="showMessage('Facebook')"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/dgmovement87/" class="social-icon" onclick="showMessage('Instagram')"><i class="fab fa-instagram"></i></a>
             <a href="https://m.me/myriam.colella" class="social-icon" onclick="showMessage('Messenger')"><i class="fab fa-facebook-messenger"></i></a>
-            <!-- Add more social icons as needed -->
         </div>
     </footer>
+
+    <script>
+        function showMessage(platform) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Redirecting',
+                text: `You are being redirected to ${platform}.`,
+                icon: 'info',
+                confirmButtonText: 'Continue',
+                showCancelButton: true,
+                cancelButtonText: 'Stay Here'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = event.currentTarget.href;
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
