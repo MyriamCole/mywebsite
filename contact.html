@@ -5,13 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Institutional and Home Care Assistance</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert library -->
-    <link rel="icon" type="image/png" href="images/myriams logo two.png"> <!-- Logo for browser tab -->
-    <!-- For iOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="images/myriams logo two.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
-    <!-- For Android -->
-    <link rel="manifest" href="manifest.json"> <!-- Manifest file for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* Contact page specific styles */
+        #contact {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-card i {
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+        
+        .contact-info {
+            margin-left: 1.8rem;
+            line-height: 1.7;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            #contact {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -32,12 +96,43 @@
 
     <main>
         <section id="contact">
-            <h2>Contact</h2>
-            <p>For more information or to inquire about my services, please contact me:</p>
-            <ul>
-                <li>Email: myriamc08@hotmail.com</li>
-                <li>Phone: 123-456-7890</li>
-            </ul>
+            <h2>Get In Touch</h2>
+            <p>Reach out to discuss how we can support you or your loved ones with compassionate care services.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <div class="contact-info">
+                        <p>For general inquiries and service information:</p>
+                        <p><a href="mailto:myriamc08@hotmail.com">myriamc08@hotmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone"></i> Phone</h3>
+                    <div class="contact-info">
+                        <p>Available Monday to Friday, 9am to 5pm:</p>
+                        <p><a href="tel:1234567890">(123) 456-7890</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Service Area</h3>
+                    <div class="contact-info">
+                        <p>Serving the Greater Montreal Area:</p>
+                        <p>Montreal, Laval, Longueuil, and surrounding communities</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Availability</h3>
+                    <div class="contact-info">
+                        <p>Flexible scheduling available:</p>
+                        <p>24/7 emergency care services</p>
+                        <p>Weekend and holiday care</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -47,9 +142,41 @@
             <a href="https://www.facebook.com/dan.gaudreault/" class="social-icon" onclick="showMessage('Facebook')"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/dgmovement87/" class="social-icon" onclick="showMessage('Instagram')"><i class="fab fa-instagram"></i></a>
             <a href="https://m.me/myriam.colella" class="social-icon" onclick="showMessage('Messenger')"><i class="fab fa-facebook-messenger"></i></a>
-            <!-- Add more social icons as needed -->
         </div>
     </footer>
+
+    <script>
+        function showMessage(platform) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Redirecting',
+                text: `You are being redirected to ${platform}.`,
+                icon: 'info',
+                confirmButtonText: 'Continue',
+                showCancelButton: true,
+                cancelButtonText: 'Stay Here'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = event.currentTarget.href;
+                }
+            });
+        }
+        
+        // Make phone numbers clickable on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                const phoneElements = document.querySelectorAll('.contact-info p:nth-child(2)');
+                phoneElements.forEach(el => {
+                    if (el.textContent.match(/\d{3}[-.]\d{3}[-.]\d{4}/)) {
+                        el.innerHTML = el.innerHTML.replace(
+                            /(\d{3}[-.]\d{3}[-.]\d{4})/,
+                            '<a href="tel:$1">$1</a>'
+                        );
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
