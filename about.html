@@ -5,13 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Institutional and Home Care Assistance</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert library -->
-    <link rel="icon" type="image/png" href="images/myriams logo two.png"> <!-- Logo for browser tab -->
-    <!-- For iOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="images/myriams logo two.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
-    <!-- For Android -->
-    <link rel="manifest" href="manifest.json"> <!-- Manifest file for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* About page specific styles */
+        #about {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .profile-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .profile-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .qualifications {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .qualifications h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .qual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .qual-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .qual-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .qual-card i {
+            color: #3498db;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mission-statement {
+            font-style: italic;
+            background-color: #e8f4fc;
+            padding: 1.5rem;
+            border-left: 4px solid #3498db;
+            margin: 2rem 0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+            
+            #about {
+                padding: 1.5rem;
+            }
+            
+            .qual-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -23,7 +102,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About me</a></li>
+                <li><a href="about.html">About Me</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -32,20 +111,95 @@
 
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to Institutional and Home Care Assistance by Myriam Colella. We are dedicated to providing compassionate care and support to individuals in need, whether in institutional settings or in the comfort of their own homes.</p>
+            <h2>My Professional Journey</h2>
+            
+            <div class="profile-section">
+                <img src="images/myriam-profile.jpg" alt="Myriam Colella" class="profile-image">
+                <div>
+                    <p>Hello, I'm Myriam Colella, a dedicated healthcare professional with over 15 years of experience in institutional and home care assistance. My journey in caregiving began when I cared for my grandmother, which ignited my passion for helping others maintain their dignity and independence.</p>
+                    <p>I believe that quality care begins with compassion, patience, and understanding. Each client is unique, and I take pride in developing personalized care plans that address both physical needs and emotional well-being.</p>
+                </div>
+            </div>
+            
+            <div class="mission-statement">
+                <p>"My mission is to provide exceptional care that enhances quality of life, promotes independence, and brings peace of mind to families. I treat every client with the same kindness and respect I would want for my own family members."</p>
+            </div>
+            
+            <div class="qualifications">
+                <h3>My Qualifications</h3>
+                <div class="qual-grid">
+                    <div class="qual-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Education</h4>
+                        <ul>
+                            <li>Nursing Diploma</li>
+                            <li>Geriatric Care Certification</li>
+                            <li>First Aid & CPR Certified</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="qual-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Experience</h4>
+                        <ul>
+                            <li>15+ Years in Healthcare</li>
+                            <li>Hospital & Clinic Experience</li>
+                            <li>Special Needs Care</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="qual-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Specializations</h4>
+                        <ul>
+                            <li>Elderly Care</li>
+                            <li>Post-Surgical Care</li>
+                            <li>Dementia Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>My Approach to Care</h3>
+            <p>I take a holistic approach to caregiving that considers all aspects of a client's well-being. My services go beyond physical care to include emotional support, mental stimulation, and social engagement. I work closely with families to ensure continuity of care and maintain open communication about their loved one's progress and needs.</p>
+            
+            <h3>Why Choose Me?</h3>
+            <ul class="benefits-list">
+                <li>Fully licensed and insured</li>
+                <li>Bilingual (English/French) services</li>
+                <li>Flexible scheduling options</li>
+                <li>Personalized care plans</li>
+                <li>Regular progress reports</li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Institutional and Home Care Assistance by Myriam Colella. All rights reserved.</p>
         <div class="social-icons">
-            <a href="https://www.facebook.com/myriam.colella" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/myriam_colella/" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://m.me/myriam.colella" class="social-icon"><i class="fab fa-facebook-messenger"></i></a>
-            <!-- Add more social icons as needed -->
+            <a href="https://www.facebook.com/myriam.colella" class="social-icon" onclick="showMessage('Facebook')"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/myriam_colella/" class="social-icon" onclick="showMessage('Instagram')"><i class="fab fa-instagram"></i></a>
+            <a href="https://m.me/myriam.colella" class="social-icon" onclick="showMessage('Messenger')"><i class="fab fa-facebook-messenger"></i></a>
         </div>
     </footer>
+
+    <script>
+        function showMessage(platform) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Redirecting',
+                text: `You are being redirected to ${platform}.`,
+                icon: 'info',
+                confirmButtonText: 'Continue',
+                showCancelButton: true,
+                cancelButtonText: 'Stay Here'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = event.currentTarget.href;
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
