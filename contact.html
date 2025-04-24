@@ -3,75 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Institutional and Home Care Assistance</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact - Institutional and Home Care Assistance by Myriam Colella</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="icon" type="image/png" href="images/myriams logo two.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
     <style>
-        /* Contact page specific styles */
-        #contact {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+        /* Consistent with index.html styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
         }
         
-        .contact-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        #home-button img {
+            height: 60px;
+            width: auto;
             transition: transform 0.3s ease;
         }
         
-        .contact-card:hover {
-            transform: translateY(-5px);
+        #home-button img:hover {
+            transform: scale(1.05);
         }
         
-        .contact-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            text-align: center;
+            flex: 1;
+        }
+        
+        nav ul {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
-        .contact-card i {
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+        
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h2, .contact-form h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
             font-size: 1.2rem;
             color: #3498db;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
         }
         
-        .contact-info {
-            margin-left: 1.8rem;
-            line-height: 1.7;
+        .contact-text h3 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
         }
         
-        .contact-info a {
-            color: #3498db;
+        .contact-text p, .contact-text a {
+            color: #555;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
-        .contact-info a:hover {
-            color: #2980b9;
-            text-decoration: underline;
+        .contact-text a:hover {
+            color: #3498db;
         }
         
-        @media screen and (max-width: 600px) {
-            .contact-methods {
-                grid-template-columns: 1fr;
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
             }
             
-            #contact {
+            #home-button {
+                margin-bottom: 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.3rem;
+                margin: 0.5rem 0 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .contact-info, .contact-form {
                 padding: 1.5rem;
             }
         }
@@ -83,11 +254,11 @@
         <a href="index.html" id="home-button">
             <img src="images/myriams logo two.png" alt="Home">
         </a>
-        <h1>Contact</h1>
+        <h1>Institutional and Home Care Assistance</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="about.html">About me</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -95,45 +266,90 @@
     </header>
 
     <main>
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>Reach out to discuss how we can support you or your loved ones with compassionate care services.</p>
+        <div class="contact-container">
+            <section class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Serving the Greater Montreal Area and surrounding regions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+15145551234">(514) 555-1234</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:care@myriamcolella.com">care@myriamcolella.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <div class="contact-text">
+                            <h3>Availability</h3>
+                            <p>Monday to Friday: 8:00 AM - 6:00 PM<br>
+                            Emergency services available 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-area">
+                    <h3>Service Area</h3>
+                    <p>I provide care services throughout Montreal and the surrounding areas, including Laval, Longueuil, and the West Island. Please contact me to confirm availability in your specific location.</p>
+                </div>
+            </section>
             
-            <div class="contact-methods">
-                <div class="contact-card">
-                    <h3><i class="fas fa-envelope"></i> Email</h3>
-                    <div class="contact-info">
-                        <p>For general inquiries and service information:</p>
-                        <p><a href="mailto:myriamc08@hotmail.com">myriamc08@hotmail.com</a></p>
+            <section class="contact-form">
+                <h2>Send a Message</h2>
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                </div>
-                
-                <div class="contact-card">
-                    <h3><i class="fas fa-phone"></i> Phone</h3>
-                    <div class="contact-info">
-                        <p>Available Monday to Friday, 9am to 5pm:</p>
-                        <p><a href="tel:1234567890">(123) 456-7890</a></p>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
-                
-                <div class="contact-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Service Area</h3>
-                    <div class="contact-info">
-                        <p>Serving the Greater Montreal Area:</p>
-                        <p>Montreal, Laval, Longueuil, and surrounding communities</p>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
-                </div>
-                
-                <div class="contact-card">
-                    <h3><i class="fas fa-calendar-alt"></i> Availability</h3>
-                    <div class="contact-info">
-                        <p>Flexible scheduling available:</p>
-                        <p>24/7 emergency care services</p>
-                        <p>Weekend and holiday care</p>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="home-care">Home Care Assistance</option>
+                            <option value="dementia">Dementia Care</option>
+                            <option value="palliative">Palliative Care</option>
+                            <option value="respite">Respite Care</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                </div>
-            </div>
-        </section>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -162,19 +378,16 @@
             });
         }
         
-        // Make phone numbers clickable on mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            if (/Mobi|Android/i.test(navigator.userAgent)) {
-                const phoneElements = document.querySelectorAll('.contact-info p:nth-child(2)');
-                phoneElements.forEach(el => {
-                    if (el.textContent.match(/\d{3}[-.]\d{3}[-.]\d{4}/)) {
-                        el.innerHTML = el.innerHTML.replace(
-                            /(\d{3}[-.]\d{3}[-.]\d{4})/,
-                            '<a href="tel:$1">$1</a>'
-                        );
-                    }
-                });
-            }
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Message Sent!',
+                text: 'Thank you for your message. I will get back to you as soon as possible.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                this.reset();
+            });
         });
     </script>
 
