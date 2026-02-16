@@ -19,7 +19,7 @@ To view the website, simply open the HTML files in a web browser. You can naviga
 
 ## Visit Website
 
-Check out the live website here: [https://myriamcole.github.io/mywebsite/](https://myriamcole.github.io/mywebsite/)
+Check out the live website here: [https://myriamcole.github.io/mywebsite/](https://myriamcole.github.io/MyWebsite/)
 
 ## Contributing
 
