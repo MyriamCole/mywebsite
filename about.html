@@ -96,26 +96,74 @@
         
         .content-section h2 {
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.8rem;
             border-bottom: 2px solid #eaeaea;
             padding-bottom: 0.5rem;
         }
         
-        .content-section p {
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
             margin-bottom: 1rem;
             font-size: 1.1rem;
             line-height: 1.7;
         }
         
+        .image-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .professional-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 3px solid #2c3e50;
+            transition: transform 0.3s ease;
+        }
+        
+        .professional-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .professional-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
         .qualifications {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            grid-column: 1 / -1;
         }
         
         .qualifications h3 {
             color: #2c3e50;
-            margin: 1rem 0 0.5rem;
+            margin: 1.5rem 0 0.5rem;
             font-size: 1.3rem;
+        }
+        
+        .qualifications h3:first-of-type {
+            margin-top: 0;
         }
         
         .qualifications ul {
@@ -125,6 +173,19 @@
         
         .qualifications li {
             margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2c3e50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
         }
         
         footer {
@@ -189,6 +250,16 @@
             .content-section {
                 padding: 1.5rem;
             }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .image-section {
+                max-width: 500px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -212,7 +283,27 @@
     <main>
         <section class="content-section">
             <h2>About Myriam Colella</h2>
-            <p>With over 8 years of experience in healthcare, I bring a wealth of knowledge and compassion to my practice. My journey in caregiving began with a deep desire to help others and make a meaningful difference in people's lives.</p>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>With over 8 years of experience in healthcare, I bring a wealth of knowledge and compassion to my practice. My journey in caregiving began with a deep desire to help others and make a meaningful difference in people's lives.</p>
+                    
+                    <div class="highlight-box">
+                        <p>"Compassionate care is not just about meeting physical needs—it's about honoring the whole person with dignity and respect."</p>
+                    </div>
+                    
+                    <p>Throughout my career, I've had the privilege of working with seniors and individuals with diverse care needs, helping them maintain their independence and quality of life in the comfort of their own homes.</p>
+                </div>
+                
+                <div class="image-section">
+                    <div class="professional-image">
+                        <img src="images/old.jpg" alt="Myriam Colella providing compassionate care to a senior">
+                    </div>
+                    <div class="image-caption">
+                        Providing compassionate, personalized care
+                    </div>
+                </div>
+            </div>
             
             <div class="qualifications">
                 <h3>Professional Qualifications</h3>
@@ -225,10 +316,19 @@
                 </ul>
                 
                 <h3>My Approach</h3>
-                <p>I believe in treating each client with dignity, respect, and personalized attention. My approach combines professional medical knowledge with a warm, compassionate demeanor that puts clients and their families at ease.</p>
+                <p>I believe in treating each client with dignity, respect, and personalized attention. My approach combines professional medical knowledge with a warm, compassionate demeanor that puts clients and their families at ease. I take the time to understand each person's unique needs, preferences, and life story.</p>
                 
                 <h3>Personal Commitment</h3>
-                <p>Beyond professional qualifications, I bring genuine care and dedication to each relationship. I understand that inviting someone into your home or trusting them with a loved one's care is a significant decision, and I honor that trust with the highest standards of service.</p>
+                <p>Beyond professional qualifications, I bring genuine care and dedication to each relationship. I understand that inviting someone into your home or trusting them with a loved one's care is a significant decision, and I honor that trust with the highest standards of service. Every client becomes part of my extended family.</p>
+                
+                <h3>Why Choose Me</h3>
+                <ul>
+                    <li>Personalized care plans tailored to individual needs</li>
+                    <li>Flexible scheduling to accommodate your routine</li>
+                    <li>Open communication with family members</li>
+                    <li>Continuity of care with the same caregiver</li>
+                    <li>Holistic approach addressing physical, emotional, and social well-being</li>
+                </ul>
             </div>
         </section>
     </main>
