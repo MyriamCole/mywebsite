@@ -1,10 +1,10 @@
 # Institutional and Home Care Assistance by Myriam Colella
 
-Welcome to the Institutional and Home Care Assistance website!
+Welcome to the [Institutional and Home Care Assistance](https://myriamcole.github.io/mywebsite/) website!
 
 ## Introduction
 
-Institutional and Home Care Assistance, founded by Myriam Colella, offers compassionate care and support to individuals in need. With a background in nursing and a passion for providing personalized care, Myriam established this organization to make a meaningful difference in the lives of individuals and families in need.
+[Institutional and Home Care Assistance](https://myriamcole.github.io/mywebsite/), founded by Myriam Colella, offers compassionate care and support to individuals in need. With a background in nursing and a passion for providing personalized care, Myriam established this organization to make a meaningful difference in the lives of individuals and families in need.
 
 ## Pages
 
@@ -16,6 +16,10 @@ Institutional and Home Care Assistance, founded by Myriam Colella, offers compas
 ## Usage
 
 To view the website, simply open the HTML files in a web browser. You can navigate between pages using the links in the header navigation.
+
+## Visit Website
+
+Check out the live website here: [https://myriamcole.github.io/mywebsite/](https://myriamcole.github.io/mywebsite/)
 
 ## Contributing
 
