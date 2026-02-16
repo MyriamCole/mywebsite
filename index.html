@@ -104,41 +104,45 @@
             padding-bottom: 0.5rem;
         }
         
-        #introduction p {
+        .about-container {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .profile-image {
+            flex: 0 0 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 3px solid #2c3e50;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
             margin-bottom: 1rem;
             font-size: 1.1rem;
             line-height: 1.7;
         }
         
-        /* Footer styles */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: auto;
-            width: 100%;
-        }
-        
-        footer p {
-            margin-bottom: 1rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .social-icon {
-            color: white;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px);
-            color: #3498db;
+        .about-text p:first-of-type {
+            font-weight: 500;
+            color: #2c3e50;
         }
         
         /* Responsive adjustments */
@@ -174,6 +178,54 @@
             #introduction {
                 padding: 1.5rem;
             }
+            
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                flex: 0 0 auto;
+                max-width: 280px;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                max-width: 220px;
+            }
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #3498db;
         }
     </style>
 </head>
@@ -197,9 +249,16 @@
     <main>
         <section id="introduction">
             <h2>Welcome to my page</h2>
-            <p>Hello, I'm Myriam Colella. With a background in nursing and a passion for providing compassionate care, I established this organization to make a meaningful difference in the lives of individuals and families in need.</p>
-            <p>At Institutional and Home Care Assistance, I understand the importance of personalized care and support. I am committed to providing the highest quality of service, tailored to meet the unique needs of each individual I serve.</p>
-            <p>Thank you for considering me for your care needs. I look forward to the opportunity to assist you or your loved ones.</p>
+            <div class="about-container">
+                <div class="profile-image">
+                    <img src="images/Myriam.jpg" alt="Myriam Colella - Founder of Institutional and Home Care Assistance">
+                </div>
+                <div class="about-text">
+                    <p>Hello, I'm Myriam Colella. With a background in nursing and a passion for providing compassionate care, I established this organization to make a meaningful difference in the lives of individuals and families in need.</p>
+                    <p>At Institutional and Home Care Assistance, I understand the importance of personalized care and support. I am committed to providing the highest quality of service, tailored to meet the unique needs of each individual I serve.</p>
+                    <p>Thank you for considering me for your care needs. I look forward to the opportunity to assist you or your loved ones.</p>
+                </div>
+            </div>
         </section>
     </main>
 
